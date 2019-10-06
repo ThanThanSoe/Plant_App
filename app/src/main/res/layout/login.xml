@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.MainActivity"
+    android:background="@color/background_white"
+    tools:showIn="@layout/activity_main">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="end"
+        android:src="@drawable/leaf" />
+
+    <TextView
+        style="@style/Theme.AppCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="50dp"
+        android:text="LOGIN"
+        android:textColor="@color/green"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:padding="@dimen/spacing_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="SingIn your account to continue" />
+
+    <LinearLayout
+        android:layout_marginStart="@dimen/spacing_XLarge"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:padding="@dimen/spacing_double"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Email Id"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:padding="@dimen/spacing_double"
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/editText_heigh"
+            android:hint="Name@gmail.com"
+            android:background="@drawable/search_background" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/spacing_triple"
+            android:padding="@dimen/spacing_double"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PASSWORD"
+            android:textColor="@color/black"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:padding="@dimen/spacing_double"
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/editText_heigh"
+            android:hint="*************"
+            android:background="@drawable/search_background" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+       android:layout_marginTop="530dp"
+        android:text="Forgot Password?"
+        android:textColor="@color/green"/>
+
+    <Button
+        android:layout_gravity="bottom"
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/editText_heigh"
+        android:text="LOGIN"
+        android:layout_marginEnd="@dimen/spacing_XLarge"
+        android:layout_marginBottom="@dimen/spacing_XLarge"
+        android:textColor="@color/white"
+        android:padding="@dimen/spacing_double"
+        android:background="@drawable/button"/>
+
+</FrameLayout>
