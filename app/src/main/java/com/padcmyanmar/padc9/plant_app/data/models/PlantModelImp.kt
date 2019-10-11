@@ -39,4 +39,15 @@ object PlantModelImp : BaseModel(), PlantModel {
             database.plantDao().getFindById(id)
         )
     }
+
+    override fun getPlantsByName(plant_name: String): List<PlantVO> {
+        val plantVO = database.plantDao().getPlants()
+        val serach_plant = ArrayList<PlantVO>()
+        for (plants in plantVO){
+            if(plants.plantName.toLowerCase().contains(plant_name.toLowerCase())){
+                serach_plant.add(plants)
+            }
+        }
+        return serach_plant
+    }
 }

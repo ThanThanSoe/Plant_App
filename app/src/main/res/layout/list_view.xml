@@ -41,7 +41,7 @@
                 android:textColor="@android:color/white"/>
             <com.google.android.material.textfield.TextInputEditText
                 android:padding="@dimen/spacing_double"
-                android:id="@+id/input_email"
+                android:id="@+id/input_search"
                 android:layout_width="370dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="280dp"

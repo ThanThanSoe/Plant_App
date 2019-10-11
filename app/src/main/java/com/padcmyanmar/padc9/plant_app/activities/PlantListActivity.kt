@@ -1,6 +1,11 @@
 package com.padcmyanmar.padc9.plant_app.activities
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.padcmyanmar.padc9.plant_app.R
@@ -42,6 +47,40 @@ class PlantListActivity : BaseActivity(), PlantListView {
 
         }
         mPresenter.onUiReady(this)
+        input_search.setOnEditorActionListener(TextView.OnEditorActionListener{ v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH){
+                val search_keyword = input_search.text.toString()
+                return@OnEditorActionListener true
+            }
+            false
+        })
+
+        input_search.setOnKeyListener{y,keyCode,event ->
+            if(keyCode == KeyEvent.KEYCODE_DEL){
+                mPresenter.onUiReady(this)
+            }
+            false
+        }
+
+        input_search.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                searchByName(p0.toString())
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+        })
+    }
+
+    fun searchByName(keywork:String){
+        mAdapter.setNewData(plantModel.getPlantsByName(keywork) as MutableList<PlantVO>)
+        rv_recycler.setAdapter(mAdapter)
     }
 
 }

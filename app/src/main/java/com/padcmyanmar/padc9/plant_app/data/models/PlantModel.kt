@@ -11,4 +11,6 @@ interface PlantModel {
         onFailure: (String) -> Unit
     )
     fun getFindById(id: Int) :LiveData<PlantVO>
+
+    fun getPlantsByName(plant_name:String):List<PlantVO>
 }

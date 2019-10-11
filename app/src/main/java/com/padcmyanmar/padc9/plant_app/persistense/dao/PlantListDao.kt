@@ -18,6 +18,9 @@ abstract class PlantListDao {
     @Query("SELECT * FROM plants WHERE id=:id")
     abstract fun getFindById(id: Int): LiveData<PlantVO>
 
+    @Query("SELECT * FROM plants")
+    abstract fun getPlants(): List<PlantVO>
+
    /* fun arePlantExitInDB():Boolean{
         return getAllPlants().isNotEmpty()
     }*/
