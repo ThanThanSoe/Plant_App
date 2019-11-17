@@ -1,6 +1,7 @@
 package com.padcmyanmar.padc9.plant_app.mvp.presenters
 
 import android.content.SharedPreferences
+import android.widget.ImageView
 import com.padcmyanmar.padc9.plant_app.data.models.PlantModelImp
 import com.padcmyanmar.padc9.plant_app.delegate.PlantDelegate
 import com.padcmyanmar.padc9.plant_app.mvp.views.LoginView
@@ -22,7 +23,7 @@ class LoginPresenter : BasePresenter<LoginView>(), PlantDelegate {
 
     }
 
-    override fun onTapPlantItem(id: Int) {
+    override fun onTapPlantItem(id: Int, tImageView: ImageView) {
 
     }
 

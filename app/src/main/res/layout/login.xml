@@ -8,30 +8,41 @@
     tools:context=".activities.MainActivity"
     android:background="@color/background_white"
     tools:showIn="@layout/activity_main">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/loginTxt_layout"
+        >
+        <ImageView
+            android:layout_width="300dp"
+            android:id="@+id/login_image"
+            android:layout_height="300dp"
+            android:layout_gravity="end"
+            android:layout_marginLeft="200dp"
+            android:src="@drawable/leaf" />
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="end"
-        android:src="@drawable/leaf" />
+        <TextView
+            style="@style/Theme.AppCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginTop="50dp"
+            android:text="LOGIN"
+            android:textColor="@color/green"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="bold" />
 
-    <TextView
-        style="@style/Theme.AppCompat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:layout_marginTop="50dp"
-        android:text="LOGIN"
-        android:textColor="@color/green"
-        android:textSize="@dimen/large_text_size"
-        android:textStyle="bold" />
+        <TextView
+            android:padding="@dimen/spacing_normal"
+            android:id="@+id/signIn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:text="SingIn your account to continue" />
 
-    <TextView
-        android:padding="@dimen/spacing_normal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:text="SingIn your account to continue" />
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_marginStart="@dimen/spacing_XLarge"
@@ -39,9 +50,12 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/user_layout"
         android:orientation="vertical">
         <TextView
             android:padding="@dimen/spacing_double"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -58,6 +72,7 @@
         <TextView
             android:textStyle="bold"
             android:layout_marginTop="@dimen/spacing_triple"
+            android:id="@+id/password"
             android:padding="@dimen/spacing_double"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
-       android:layout_marginTop="530dp"
+        android:layout_marginTop="530dp"
         android:text="Forgot Password?"
         android:textColor="@color/green"/>
 
@@ -84,6 +99,7 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="@dimen/editText_heigh"
+        android:visibility="gone"
         android:text="LOGIN"
         android:layout_marginEnd="@dimen/spacing_XLarge"
         android:layout_marginBottom="@dimen/spacing_XLarge"

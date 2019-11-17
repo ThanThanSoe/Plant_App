@@ -1,5 +1,6 @@
 package com.padcmyanmar.padc9.plant_app.mvp.presenters
 
+import android.widget.ImageView
 import androidx.lifecycle.Observer
 import com.padcmyanmar.padc9.plant_app.activities.BaseActivity
 import com.padcmyanmar.padc9.plant_app.data.models.PlantModelImp
@@ -11,8 +12,8 @@ class PlantListPresenter : BasePresenter<PlantListView>(), PlantDelegate {
 
     }
 
-    override fun onTapPlantItem(id: Int) {
-        mView.navigateToNavigate(id)
+    override fun onTapPlantItem(id: Int, tImageView: ImageView) {
+        mView.navigateToNavigate(id, tImageView)
     }
 
 

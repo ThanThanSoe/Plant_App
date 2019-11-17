@@ -3,6 +3,10 @@ package com.padcmyanmar.padc9.plant_app.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.transition.Slide
+import android.view.Gravity
+import android.view.Window
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.padcmyanmar.padc9.plant_app.R
@@ -29,6 +33,8 @@ class DetailActivity : BaseActivity(), DetailView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContentView(R.layout.plant_detail)
 
         mPresenter = ViewModelProviders.of(this).get(DetailPresenter::class.java)
@@ -39,16 +45,18 @@ class DetailActivity : BaseActivity(), DetailView {
 
     }
 
+
+
     fun bindData(plantVO: PlantVO) {
         Glide.with(this)
             .load(plantVO.plantPhoto)
             .into(detail_imageView)
         detail_title.text = plantVO.plantName
         detail.text = plantVO.description
-        if (plantVO.uploadUser.userPhoto!=null)
-            Glide.with(this)
-                .load(plantVO.uploadUser.userPhoto)
-                .into(detail_image_profile)
+        /* if (plantVO.uploadUser.userPhoto!=null)
+             Glide.with(this)
+                 .load(plantVO.uploadUser.userPhoto)
+                 .into(detail_image_profile)*/
         user_name.text = "by "+plantVO.uploadUser.name
     }
 }
